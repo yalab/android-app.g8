@@ -11,7 +11,7 @@ class AndroidTests extends AndroidTestCase {
   }
 }
 
-class ActivityTests extends ActivityInstrumentationTestCase2(classOf[$main_activity$]) {
+class ActivityTests(activityClass: Class[$main_activity$]) extends ActivityInstrumentationTestCase2[$main_activity$](activityClass) {
    def testHelloWorldIsShown() {
       val activity = getActivity
       val textview = activity.findView(TR.textview)
